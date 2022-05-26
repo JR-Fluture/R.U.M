@@ -1,0 +1,107 @@
+
+body{
+    height: 100vh;
+    background-color: #58ACFA;
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+    from {
+        -webkit-transform: rotateY(0deg);
+        -o-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+    }
+    to {
+        -webkit-transform: rotateY(360deg);
+        -o-transform: rotateY(360deg);
+        transform: rotateY(360deg);
+    }
+}
+@keyframes rotating {
+    from {
+        -ms-transform: rotateY(0deg);
+        -moz-transform: rotateY(0deg);
+        -webkit-transform: rotateY(0deg);
+        -o-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+    }
+    to {
+        -ms-transform: rotateY(360deg);
+        -moz-transform: rotateY(360deg);
+        -webkit-transform: rotateY(360deg);
+        -o-transform: rotateY(360deg);
+        transform: rotateY(360deg);
+    }
+}
+.rotating {
+    
+    -webkit-animation: rotating 5s linear infinite;
+    -moz-animation: rotating 5s linear infinite;
+    -ms-animation: rotating 5s linear infinite;
+    -o-animation: rotating 5s linear infinite;
+    animation: rotating 5s linear infinite;
+}
+.addUpdateShow i{
+    color: red;
+}
+
+a.addUpdateShow i, a.addUpdateShow i:link, a.addUpdateShow i:visited,a.addUpdateShow,a.addUpdateShow:link, a.addUpdateShow:visited,#add,#add:link,#add:visited{
+    color: #ffffff;
+}
+a.addUpdateShow i:hover,#add:hover{
+    color: #0000ff;
+}
+a.dropdown-item:hover, li a:not([href]):not([tabindex]):hover{
+    color: #ffffff;
+    background-color: #0000ff;
+}
+
+#myHeaderSearch{
+    background-color: #58ACFA;
+}
+.stickySearch {
+    z-index: 100;
+    width: 100%;
+    position: fixed;
+    top: 0;
+
+}
+.stickyTable{
+    z-index: 200;
+    /*width: 100%;*/
+    position: fixed;
+    top: 64px;
+    text-align:start;
+    text-size-adjust:100%;
+    display: table-header-group;
+    vertical-align:middle;
+    white-space:normal;
+}
+/*.stickyTable th[scope="col"]{
+    width: 10%;
+}*/
+.stickyTable #tabla1{
+    width: 0.3%;
+}
+.stickyTable #tabla2{
+    width: 2.9%;
+}
+.stickyTable #tabla3{
+    width: 2.5%;
+}
+.stickyTable #tabla4{
+    width: 1.7%;
+}
+.stickyTable #tabla5{
+    width: 2%;
+}
+#imgRotating img.rotating, #imgRotating img.submenu{
+    height: 60%;
+    opacity: 0.5;
+    line-height: 100px;
+    display:block;
+    margin:auto;
+    position: fixed;
+    top: 10%; left: 0; bottom: 0; right: 0;
+    z-index: -1;
+}
+
