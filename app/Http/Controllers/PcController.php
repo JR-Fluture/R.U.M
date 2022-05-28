@@ -9,7 +9,16 @@ use Illuminate\Http\Request;
 
 class PcController extends Controller
 {
-
+    public function __construct()
+    {
+        $this->middleware('can:pcs.index')->only('index');
+        $this->middleware('can:pcs.show')->only('show');
+        $this->middleware('can:pcs.create')->only('create','store');
+        $this->middleware('can:pcs.edit')->only('edit','update');
+        $this->middleware('can:pcs.destroy')->only('destroy');
+        $this->middleware('can:pcs.pdf')->only('pdf');
+    }
+    public $search;
     public function index()
     {
         if (isset($_GET["condicional"])) {

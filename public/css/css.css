@@ -4,7 +4,7 @@ a{
 }
 .active{
     color:#111827 !important;
-    background-color: #6b7280;
+    background-color: #6b7280 !important;
     font-weight: bold !important;
 }
 .active:hover{

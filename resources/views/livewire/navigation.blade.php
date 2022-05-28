@@ -1,4 +1,4 @@
-<nav class="bg-gray-800" x-data="{ open: false }">
+<nav class="bg-gray-800 z-30" x-data="{ open: false }">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
             <div class="flex items-center">
@@ -124,16 +124,84 @@
                                 
                                     @foreach ($item['array'] as $list)
                                         @can($list['rol'])
-                                            <a href="{{$list['ruta']}}" class="{{request()->routeIs($list['ruta'])?'active':''}} block px-4 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">{{__($list['name'])}}</a>
+                                            <a href="{{$list['ruta']}}" class="block px-4 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">{{__($list['name'])}}</a>
                                         @endcan
                                     @endforeach
                             @else
-                                    <a href="{{$item['ruta']}}" class="{{request()->routeIs($item['ruta'])?'active':''}} bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">{{__($item['name'])}}</a>
+                                    <a href="{{$item['ruta']}}" class="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">{{__($item['name'])}}</a>
                             @endisset
+                            <!-- hover:shadow-lg transition duration-200 hover:cursor-pointer px-4 rounded-md py-1 -->
+            
                         </div>
                     @endcan
                 @endforeach
+                @canany(['usuarios.index', 'roles.index'])
+                    <h4 class="text-white text-center font-semibold tracking-tighter">{{__('Users')}}</h4>
+                @endcanany
+                @can('usuarios.index')
+                    <a href="{{route('usuarios.index')}}" class="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                        {{__('Usuario')}}
+                    </a>
+                @endcan
+                @can('roles.index')
+                    <a href="{{route('roles.index')}}" class="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                        {{__('Roles')}}
+                    </a>
+                @endcan
 
+                @can('departamentos.index')
+                    <br>
+                    <h4 class="text-white text-center font-semibold tracking-tighter">{{__('Person')}}</h4>
+                    <a href="{{route('departamentos.index')}}" class="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                        {{__('Departamentos')}}
+                    </a>
+                @endcan
+
+
+                @canany(['formatos-sims.index', 'tipos-sims.index', 'tipos-lineas.index', 'marcas-terminales.index', 'tipos-terminales.index', 'tipos-cargadores.index', 'contratos.index', 'proveedores.index'])
+                    <br>
+                    <h4 class="text-white text-center font-semibold tracking-tighter">{{__('Mobile')}}</h4>
+                @endcanany
+                @can('formatos-sims.index')
+                    <a href="{{route('formatos-sims.index')}}" class="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                        {{__('Formato SIM')}}
+                    </a>
+                @endcan
+                @can('tipos-sims.index')
+                    <a href="{{route('tipos-sims.index')}}" class="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                        {{__('Tipos de SIM')}}
+                    </a>
+                @endcan
+                @can('tipos-lineas.index')
+                    <a href="{{route('tipos-lineas.index')}}" class="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                        {{__('Tipos de linea')}}
+                    </a>
+                @endcan
+                @can('marcas-terminales.index')
+                    <a href="{{route('marcas-terminales.index')}}" class="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                        {{__('Marcas de terminal')}}
+                    </a>
+                @endcan
+                @can('tipos-terminales.index')
+                    <a href="{{route('tipos-terminales.index')}}" class="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                        {{__('Tipos de terminal')}}
+                    </a>
+                @endcan
+                @can('tipos-cargadores.index')
+                    <a href="{{route('tipos-cargadores.index')}}" class="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                        {{__('Tipos de cargador')}}
+                    </a>
+                @endcan
+                @can('proveedores.index')
+                    <a href="{{route('proveedores.index')}}" class="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                        {{__('Proveedores')}}
+                    </a>
+                @endcan
+                @can('contratos.index')
+                    <a href="{{route('contratos.index')}}" class="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                        {{__('Contratos')}}
+                    </a>
+                @endcan
             </div>
         @endauth
         @auth

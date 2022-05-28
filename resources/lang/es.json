@@ -1,4 +1,16 @@
 {
+
+    "Users List":"Lista de Usuarios",    
+    "Add User":"Agregar Usuario",
+    "Edit User":"Editar Usuario",
+    "Update User":"Actualizar Usuario",
+    "Create User":"Crear Usuario",
+    "New User":"Nuevo Usuario",
+    "The user was saved successfully":"El usuario se guardo con éxito",
+    "The user has been successfully deleted":"El usuario se ha eliminado con éxito",
+
+
+
     
     "Pc Incidents List":"Lista de Incidencias PC",    
     "Add Pc Incident":"Agregar Incidencia PC",
@@ -11,13 +23,6 @@
     "In use":"En uso",
     "End of use date":"Fecha de fin de uso",
     
-
-
-
-
-
-
-
     "People List":"Lista de Personas",    
     "Add Person":"Agregar Persona",
     "Edit Person":"Editar Persona",

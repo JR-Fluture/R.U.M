@@ -10,6 +10,16 @@ use Illuminate\Http\Request;
 class MonitoresController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('can:monitores.index')->only('index');
+        $this->middleware('can:monitores.show')->only('show');
+        $this->middleware('can:monitores.create')->only('create','store');
+        $this->middleware('can:monitores.edit')->only('edit','update');
+        $this->middleware('can:monitores.destroy')->only('destroy');
+        $this->middleware('can:monitores.pdf')->only('pdf');
+    }
+    public $search;
     public function index()
     {
         if (isset($_GET["condicional"])) {

@@ -11,6 +11,16 @@ use Illuminate\Http\Request;
 
 class IncidenciaPcController extends Controller
 {
+    
+    public function __construct()
+    {
+        $this->middleware('can:incidencias-pcs.index')->only('index');
+        $this->middleware('can:incidencias-pcs.show')->only('show');
+        $this->middleware('can:incidencias-pcs.create')->only('create','store');
+        $this->middleware('can:incidencias-pcs.edit')->only('edit','update');
+        $this->middleware('can:incidencias-pcs.destroy')->only('destroy');
+        $this->middleware('can:incidencias-pcs.pdf')->only('pdf');
+    }
     public $search;
 
     public function index()

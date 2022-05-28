@@ -27,16 +27,6 @@ class CreateImpresorasTable extends Migration
             $table->text('comentarios')->nullable();
             $table->timestamps();
         });
-
-        Schema::create('persona_has_impresora', function (Blueprint $table){
-            $table->unsignedBigInteger('persona_id')->nullable();
-            $table->unsignedBigInteger('impresora_id')->nullable();
-            $table->foreign('impresora_id')->references('id')->on('impresoras')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('persona_id')->references('id')->on('personas')->onUpdate('cascade')->onDelete('cascade');
-            $table->timestamps();
-            $table->primary(['impresora_id','persona_id'],
-                    'persona_has_impresora_primary');
-        });
     }
 
     /**
@@ -47,6 +37,5 @@ class CreateImpresorasTable extends Migration
     public function down()
     {
         Schema::dropIfExists('impresoras');        
-        Schema::dropIfExists('persona_has_impresora');
     }
 }

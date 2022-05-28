@@ -10,6 +10,16 @@ use Illuminate\Http\Request;
 
 class PersonaController extends Controller
 {
+    
+    public function __construct()
+    {
+        $this->middleware('can:personas.index')->only('index');
+        $this->middleware('can:personas.show')->only('show');
+        $this->middleware('can:personas.create')->only('create','store');
+        $this->middleware('can:personas.edit')->only('edit','update');
+        $this->middleware('can:personas.destroy')->only('destroy');
+        $this->middleware('can:personas.pdf')->only('pdf');
+    }
     public $search;
 
     public function index()

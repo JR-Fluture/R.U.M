@@ -10,7 +10,16 @@ use Illuminate\Http\Request;
 
 class ImpresoraController extends Controller
 {
-
+    public function __construct()
+    {
+        $this->middleware('can:impresoras.index')->only('index');
+        $this->middleware('can:impresoras.show')->only('show','relacion');
+        $this->middleware('can:impresoras.create')->only('create','store');
+        $this->middleware('can:impresoras.edit')->only('edit','update');
+        $this->middleware('can:impresoras.destroy')->only('destroy');
+        $this->middleware('can:impresoras.pdf')->only('pdf');
+    }
+    public $search;
     public function index()
     {
         if (isset($_GET["condicional"])) {
@@ -57,7 +66,6 @@ class ImpresoraController extends Controller
     {
         $personas=Persona::join('impresora_persona', 'personas.id', '=', 'impresora_persona.persona_id')
             ->where('impresora_id', $impresora->id)
-            ->latest('impresora_persona.id')
             ->get();
         $all=Persona::all();
         $all=Persona::get()->pluck('name','id');

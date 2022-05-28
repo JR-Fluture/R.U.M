@@ -1,0 +1,20 @@
+<x-app-layout>
+    <x-dashboard>
+        <div class="py-8">
+            <h1 class=" text-center">{{__('Edit Contract')}}</h1>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                {!! Form::model($contrato, ['route' => ['contratos.update',$contrato], 'method' => 'PUT', 'class' => 'form-horizontal']) !!}                
+
+                    @include('contratos.partials.form')
+                    <br>
+                    <div class="btn-group" style="text-align: center; display:block;">
+                        {!! Form::submit(__('Update Contract'), ['class' => 'btn btn-success']) !!}
+                    </div>
+                {!! Form::close() !!}
+            </div>
+        </div>
+            
+    </x-dashboard>
+</x-app-layout>

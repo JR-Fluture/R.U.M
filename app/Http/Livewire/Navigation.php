@@ -84,8 +84,9 @@ class Navigation extends Component
             ],
             [
                 'rol'=>'dashboard',
+                'ruta'=>route('panel'),
                 'name'=>'Dashboard',
-                'array'=>array(
+                /* 'array'=>array(
                     [
                         'rol'=>'dashboard',
                         'ruta'=>route('home'),
@@ -136,7 +137,7 @@ class Navigation extends Component
                         'ruta'=>route('home'),
                         'name'=>'Proveedores'
                     ],
-                )
+                ) */
             ],
         );
         /* 

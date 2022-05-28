@@ -14,7 +14,7 @@
     <header>
         <div id="cabecera">
             <img id="logo" src="{{public_path().'/storage/img/logo.png'}}" alt="IconNavigation">
-            <h3 class="nameLogo">R.U.M</h3>
+            <h3 class="nameLogo">R.U.M.</h3>
         </div>
         <div id="titulo_pdf">
             <h1>{{__('PC List')}}</h1>

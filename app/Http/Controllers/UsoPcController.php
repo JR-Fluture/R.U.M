@@ -13,6 +13,15 @@ use Illuminate\Http\Request;
 
 class UsoPcController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:usopcs.index')->only('index');
+        $this->middleware('can:usopcs.show')->only('show');
+        $this->middleware('can:usopcs.create')->only('create','store');
+        $this->middleware('can:usopcs.edit')->only('edit','update');
+        $this->middleware('can:usopcs.destroy')->only('destroy');
+        $this->middleware('can:usopcs.pdf')->only('pdf');
+    }
     public $search;
 
     public function index()
