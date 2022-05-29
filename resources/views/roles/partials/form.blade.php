@@ -17,10 +17,10 @@
                 }
                 if (isset($resX)) {
                     if ($res!=$resX) {
-                        echo "<h5>".__(ucfirst($res)).":</h5>";
+                        echo "<br><h5>".__(ucfirst($res)).":</h5>";
                     }
                 }else{
-                    echo "<h5>".__(ucfirst($res)).":</h5>";
+                    echo "<br><h5>".__(ucfirst($res)).":</h5>";
                 }
                 $resX=$res;
             ?>

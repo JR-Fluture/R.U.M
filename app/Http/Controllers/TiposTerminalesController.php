@@ -20,7 +20,7 @@ class TiposTerminalesController extends Controller
     public $search;
     public function index()
     {
-        $tipos_terminales = TiposTerminales::all();
+        $tipos_terminales = TiposTerminales::paginate(6);
         
         return view('tipos-terminales.index',compact('tipos_terminales'));
     }

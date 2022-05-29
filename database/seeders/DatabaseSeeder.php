@@ -4,9 +4,12 @@ namespace Database\Seeders;
 
 use App\Models\Impresora;
 use App\Models\IncidenciasPc;
+use App\Models\Linea;
+use App\Models\ModelosTerminales;
 use App\Models\Monitores;
 use App\Models\Pc;
 use App\Models\Persona;
+use App\Models\Sim;
 use App\Models\UsosPc;
 use Illuminate\Database\Seeder;
 
@@ -45,6 +48,9 @@ class DatabaseSeeder extends Seeder
         $this->call(TipoCargadorSeeder::class);
         $this->call(TipoLineaSeeder::class);
         $this->call(TipoTerminalSeeder::class);
-        
+
+        Linea::factory(50)->create();
+        Sim::factory(50)->create();
+        ModelosTerminales::factory(50)->create();
     }
 }

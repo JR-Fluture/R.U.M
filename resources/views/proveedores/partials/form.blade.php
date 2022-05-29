@@ -35,7 +35,7 @@
 </div>
 <br>
 <div class="form-group{{ $errors->has('comentarios') ? ' has-error' : '' }}">
-    <h5><strong>{!! Form::label('comentarios', __('Commets')) !!}</strong></h5>
+    <h5><strong>{!! Form::label('comentarios', __('Comments')) !!}</strong></h5>
     {!! Form::textarea('comentarios', null, ['class' => 'form-control']) !!}
     <small class="text-danger">{{ $errors->first('comentarios') }}</small>
 </div>

@@ -61,6 +61,9 @@
                 </div>       
             </div>
         </div>
+        <div class="card-footer">
+            {{$tipos_cargadores->links()}}
+        </div>
         
     </x-dashboard>
 </x-app-layout>

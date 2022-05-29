@@ -61,18 +61,18 @@ class Navigation extends Component
                         'name'=>'Terminals'
                     ],
                     [
-                        'rol'=>'movil',
-                        'ruta'=>route('home'),
+                        'rol'=>'modelos-terminales.index',
+                        'ruta'=>route('modelos-terminales.index'),
                         'name'=>'Terminal models'
                     ],
                     [
-                        'rol'=>'movil',
-                        'ruta'=>route('home'),
+                        'rol'=>'sims.index',
+                        'ruta'=>route('sims.index'),
                         'name'=>'SIM'
                     ],
                     [
-                        'rol'=>'movil',
-                        'ruta'=>route('home'),
+                        'rol'=>'lineas.index',
+                        'ruta'=>route('lineas.index'),
                         'name'=>'Line'
                     ]
                 )

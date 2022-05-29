@@ -65,6 +65,9 @@
                 </div>       
             </div>
         </div>
+        <div class="card-footer">
+            {{$roles->links()}}
+        </div>
         
     </x-dashboard>
 </x-app-layout>

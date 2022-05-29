@@ -70,6 +70,8 @@
                 </div>       
             </div>
         </div>
-        
+        <div class="card-footer">
+            {{$contratos->links()}}
+        </div>
     </x-dashboard>
 </x-app-layout>

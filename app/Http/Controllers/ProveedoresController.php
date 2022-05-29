@@ -20,7 +20,7 @@ class ProveedoresController extends Controller
     public $search;
     public function index()
     {
-        $proveedores = Proveedores::all();
+        $proveedores = Proveedores::paginate(6);
         
         return view('proveedores.index',compact('proveedores'));
     }

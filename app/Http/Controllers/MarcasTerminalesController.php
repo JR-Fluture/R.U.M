@@ -20,7 +20,7 @@ class MarcasTerminalesController extends Controller
     public $search;
     public function index()
     {
-        $marcas_terminales = MarcasTerminales::all();
+        $marcas_terminales = MarcasTerminales::paginate(6);
         
         return view('marcas-terminales.index',compact('marcas_terminales'));
     }

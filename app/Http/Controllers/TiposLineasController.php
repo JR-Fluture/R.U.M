@@ -20,7 +20,7 @@ class TiposLineasController extends Controller
     public $search;
     public function index()
     {
-        $tipos_lineas = TiposLineas::all();
+        $tipos_lineas = TiposLineas::paginate(6);
         
         return view('tipos-lineas.index',compact('tipos_lineas'));
     }

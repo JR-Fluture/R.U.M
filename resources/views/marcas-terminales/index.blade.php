@@ -61,6 +61,9 @@
                 </div>       
             </div>
         </div>
+        <div class="card-footer">
+            {{$marcas_terminales->links()}}
+        </div>
         
     </x-dashboard>
 </x-app-layout>

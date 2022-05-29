@@ -21,7 +21,7 @@ class ContratosController extends Controller
     public $search;
     public function index()
     {
-        $contratos = Contrato::all();
+        $contratos = Contrato::paginate(6);
         
         return view('contratos.index',compact('contratos'));
     }

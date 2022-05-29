@@ -62,5 +62,8 @@
             </div>
         </div>
         
+        <div class="card-footer">
+            {{$formatos_sims->links()}}
+        </div>
     </x-dashboard>
 </x-app-layout>

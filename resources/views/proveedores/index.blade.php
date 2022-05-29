@@ -6,7 +6,7 @@
             </div>        
         @endif
         <div class="py-8">
-            <h1 class=" text-center">{{__('List Type Terminal')}}</h1>
+            <h1 class=" text-center">{{__('List Supplier')}}</h1>
         </div>
         
         <div class="container bg-white shadow-md overflow-auto p-3">
@@ -15,7 +15,7 @@
                     <div class="card-header container">
                         <div class="col-span-1 w-full h-full flex flex-col justify-center">
                             @can('proveedores.create')
-                                <a class="btn btn-primary" href="{{route('proveedores.create')}}">{{__('Add Type Terminal')}}</a>
+                                <a class="btn btn-primary" href="{{route('proveedores.create')}}">{{__('Add Supplier')}}</a>
                             @endcan
                         </div>
                     </div>
@@ -67,6 +67,9 @@
                     @endif
                 </div>       
             </div>
+        </div>
+        <div class="card-footer">
+            {{$proveedores->links()}}
         </div>
         
     </x-dashboard>

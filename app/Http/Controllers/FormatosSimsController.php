@@ -20,7 +20,7 @@ class FormatosSimsController extends Controller
     public $search;
     public function index()
     {
-        $formatos_sims = FormatosSims::get();
+        $formatos_sims = FormatosSims::paginate(6);
         
         return view('formatos-sims.index',compact('formatos_sims'));
     }

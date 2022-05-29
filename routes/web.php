@@ -6,11 +6,14 @@ use App\Http\Controllers\FormatosSimsController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ImpresoraController;
 use App\Http\Controllers\IncidenciaPcController;
+use App\Http\Controllers\LineasController;
 use App\Http\Controllers\MarcasTerminalesController;
+use App\Http\Controllers\ModelosTerminalesController;
 use App\Http\Controllers\MonitoresController;
 use App\Http\Controllers\PcController;
 use App\Http\Controllers\PersonaController;
 use App\Http\Controllers\ProveedoresController;
+use App\Http\Controllers\SimsController;
 use App\Http\Controllers\TiposCargadoresController;
 use App\Http\Controllers\TiposLineasController;
 use App\Http\Controllers\TiposTerminalesController;
@@ -76,7 +79,14 @@ Route::get('incidencias-pcs/pdf',[IncidenciaPcController::class,'pdf'])->name('i
 Route::resource('incidencias-pcs',IncidenciaPcController::class)->middleware('auth');
 
 //* Moviles
+Route::get('lineas/pdf',[LineasController::class,'pdf'])->name('lineas.pdf')->middleware('auth');
+Route::resource('lineas',LineasController::class)->middleware('auth');
 
+Route::get('sims/pdf',[SimsController::class,'pdf'])->name('sims.pdf')->middleware('auth');
+Route::resource('sims',SimsController::class)->middleware('auth');
+
+Route::get('modelos-terminales/pdf',[ModelosTerminalesController::class,'pdf'])->name('modelos-terminales.pdf')->middleware('auth');
+Route::resource('modelos-terminales',ModelosTerminalesController::class)->middleware('auth');
     //* Movil DashBoard
     Route::resource('formatos-sims',FormatosSimsController::class)->except('show')->middleware('auth');
     Route::resource('tipos-lineas',TiposLineasController::class)->except('show')->middleware('auth');

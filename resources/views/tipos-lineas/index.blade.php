@@ -63,6 +63,9 @@
                 </div>       
             </div>
         </div>
+        <div class="card-footer">
+            {{$tipos_lineas->links()}}
+        </div>
         
     </x-dashboard>
 </x-app-layout>

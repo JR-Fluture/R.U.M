@@ -41,6 +41,30 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'roles.edit','description'=>'Edit role'])->syncRoles([$role1]);
         Permission::create(['name' => 'roles.destroy','description'=>'Delete role'])->syncRoles([$role1]);
 
+        //ModelosTerminales
+        Permission::create(['name' => 'modelos-terminales.index','description'=>'List from model terminals'])->syncRoles([$role1]);
+        Permission::create(['name' => 'modelos-terminales.create','description'=>'Create model terminal'])->syncRoles([$role1]);
+        Permission::create(['name' => 'modelos-terminales.edit','description'=>'Edit model terminal'])->syncRoles([$role1]);
+        Permission::create(['name' => 'modelos-terminales.show','description'=>'Show model terminal'])->syncRoles([$role1]);
+        Permission::create(['name' => 'modelos-terminales.destroy','description'=>'Delete model terminal'])->syncRoles([$role1]);
+        Permission::create(['name' => 'modelos-terminales.pdf','description'=>'Download PDF model terminals'])->syncRoles([$role1]);
+
+        //SIMS
+        Permission::create(['name' => 'sims.index','description'=>'List from sims'])->syncRoles([$role1]);
+        Permission::create(['name' => 'sims.create','description'=>'Create sim'])->syncRoles([$role1]);
+        Permission::create(['name' => 'sims.edit','description'=>'Edit sim'])->syncRoles([$role1]);
+        Permission::create(['name' => 'sims.show','description'=>'Show sim'])->syncRoles([$role1]);
+        Permission::create(['name' => 'sims.destroy','description'=>'Delete sim'])->syncRoles([$role1]);
+        Permission::create(['name' => 'sims.pdf','description'=>'Download PDF sims'])->syncRoles([$role1]);
+
+        //Lineas
+        Permission::create(['name' => 'lineas.index','description'=>'List from lines'])->syncRoles([$role1]);
+        Permission::create(['name' => 'lineas.create','description'=>'Create line'])->syncRoles([$role1]);
+        Permission::create(['name' => 'lineas.edit','description'=>'Edit line'])->syncRoles([$role1]);
+        Permission::create(['name' => 'lineas.show','description'=>'Show line'])->syncRoles([$role1]);
+        Permission::create(['name' => 'lineas.destroy','description'=>'Delete line'])->syncRoles([$role1]);
+        Permission::create(['name' => 'lineas.pdf','description'=>'Download PDF lines'])->syncRoles([$role1]);
+
         //Contratos
         Permission::create(['name' => 'contratos.index','description'=>'List from contracts'])->syncRoles([$role1,$role2]);
         Permission::create(['name' => 'contratos.create','description'=>'Create contract'])->syncRoles([$role1,$role2]);
@@ -85,7 +109,6 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'formatos-sims.edit','description'=>'Edit format sim'])->syncRoles([$role1,$role2]);
         Permission::create(['name' => 'formatos-sims.show','description'=>'Show format sim'])->syncRoles([$role1,$role2]);
         Permission::create(['name' => 'formatos-sims.destroy','description'=>'Delete format sim'])->syncRoles([$role1,$role2]);
-        Permission::create(['name' => 'formatos-sims.pdf','description'=>'Download PDF format sims'])->syncRoles([$role1,$role2]);
         
         //Departamentos
         Permission::create(['name' => 'departamentos.index','description'=>'List from departaments'])->syncRoles([$role1,$role2]);

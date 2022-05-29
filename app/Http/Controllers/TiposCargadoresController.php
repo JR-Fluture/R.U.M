@@ -20,7 +20,7 @@ class TiposCargadoresController extends Controller
     public $search;
     public function index()
     {
-        $tipos_cargadores = TiposCargadores::all();
+        $tipos_cargadores = TiposCargadores::paginate(6);
         
         return view('tipos-cargadores.index',compact('tipos_cargadores'));
     }
