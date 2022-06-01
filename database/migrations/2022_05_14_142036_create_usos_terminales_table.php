@@ -17,6 +17,8 @@ class CreateUsosTerminalesTable extends Migration
             $table->id();
             
             $table->text('comentarios')->nullable();
+            $table->boolean('en_uso')->default(0);
+            $table->date('fin_uso')->nullable();
             $table->unsignedBigInteger('persona_id');
             $table->unsignedBigInteger('terminal_id');
             $table->unsignedBigInteger('sim_id');

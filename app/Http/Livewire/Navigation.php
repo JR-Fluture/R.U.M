@@ -46,18 +46,18 @@ class Navigation extends Component
                 'name'=>'Mobile',
                 'array'=>array(
                     [
-                        'rol'=>'movil',
-                        'ruta'=>route('home'),
+                        'rol'=>'incidencias-terminales.index',
+                        'ruta'=>route('incidencias-terminales.index'),
                         'name'=>'Incidents'
                     ],
                     [
-                        'rol'=>'movil',
-                        'ruta'=>route('home'),
+                        'rol'=>'usos-terminales.index',
+                        'ruta'=>route('usos-terminales.index'),
                         'name'=>'Terminal use'
                     ],
                     [
-                        'rol'=>'movil',
-                        'ruta'=>route('home'),
+                        'rol'=>'terminales.index',
+                        'ruta'=>route('terminales.index'),
                         'name'=>'Terminals'
                     ],
                     [

@@ -62,7 +62,7 @@ class ModelosTerminalesController extends Controller
     public function store(Request $request)
     {
         ModelosTerminales::create($request->all());
-        return redirect()->route('modelos-terminales.index')->with('info',__('The line was saved successfully'));
+        return redirect()->route('modelos-terminales.index')->with('info',__('The model terminal was saved successfully'));
     }
     
     public function show(ModelosTerminales $modelos_terminale)
@@ -84,13 +84,13 @@ class ModelosTerminalesController extends Controller
     public function update(Request $request, ModelosTerminales $modelos_terminale)
     {
         $modelos_terminale->update($request->all());
-        return redirect()->route('modelos-terminales.index')->with('info',__('The line was successfully updated'));
+        return redirect()->route('modelos-terminales.index')->with('info',__('The model terminal was successfully updated'));
     }
     
     public function destroy(ModelosTerminales $modelos_terminale)
     {
         $modelos_terminale->delete();
-        return redirect()->route('modelos-terminales.index')->with('info',__('The line has been successfully deleted'));
+        return redirect()->route('modelos-terminales.index')->with('info',__('The model terminal has been successfully deleted'));
     }
 
     public function pdf()

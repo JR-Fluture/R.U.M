@@ -1,6 +1,10 @@
 <!-- Sidebar layout -->
 <div class="flex flex-row">
-    <div class="lg:hidden sm-none transition duration-200 transform sm:translate-x-0 sidebar z-20 w-60 h-screen bg-gray-800 hidden md:block flex-col pt-5">
+    <div class="sm-none transition duration-200 transform sm:translate-x-0 sidebar z-0 w-60 h-auto bg-gray-800 hidden md:block flex-col pt-5 mr-16">
+        <div class="nav-items flex flex-col mx-2 space-y-4">
+        </div>
+    </div>
+    <div id='menu_dashboard' class="fixed sm-none transition duration-200 transform sm:translate-x-0 sidebar z-20 w-60 h-screen bg-gray-800 hidden md:block flex-col pt-5">
 
         <div class="nav-items flex flex-col mx-2 space-y-4">
             
@@ -77,3 +81,17 @@
         {{ $slot }}
     </div>
 </div>
+<script>
+    window.onscroll = function() {myFunction()};
+    
+    var navbar = document.getElementById("menu_dashboard");
+    var sticky = navbar.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+</script>

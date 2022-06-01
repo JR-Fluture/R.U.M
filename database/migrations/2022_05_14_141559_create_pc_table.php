@@ -23,7 +23,7 @@ class CreatePcTable extends Migration
             $table->integer('capacidad_almacenamiento')->nullable();
             $table->string('tipos_conector')->nullable();
             $table->string('sistema_operativo')->nullable();
-            $table->boolean('activacion')->nullable();
+            $table->boolean('activacion')->default(0);
             $table->string('numero_inventario')->nullable();
             $table->text('comentarios')->nullable();
             $table->timestamps();

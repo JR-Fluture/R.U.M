@@ -41,6 +41,30 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'roles.edit','description'=>'Edit role'])->syncRoles([$role1]);
         Permission::create(['name' => 'roles.destroy','description'=>'Delete role'])->syncRoles([$role1]);
 
+        //IncidenciasTerminales
+        Permission::create(['name' => 'incidencias-terminales.index','description'=>'List from terminal incidents'])->syncRoles([$role1]);
+        Permission::create(['name' => 'incidencias-terminales.create','description'=>'Create terminal incidents'])->syncRoles([$role1]);
+        Permission::create(['name' => 'incidencias-terminales.edit','description'=>'Edit terminal incidents'])->syncRoles([$role1]);
+        Permission::create(['name' => 'incidencias-terminales.show','description'=>'Show terminal incidents'])->syncRoles([$role1]);
+        Permission::create(['name' => 'incidencias-terminales.destroy','description'=>'Delete terminal incidents'])->syncRoles([$role1]);
+        Permission::create(['name' => 'incidencias-terminales.pdf','description'=>'Download PDF terminal incidents'])->syncRoles([$role1]);
+
+        //UsosTerminales
+        Permission::create(['name' => 'usos-terminales.index','description'=>'List from use terminals'])->syncRoles([$role1]);
+        Permission::create(['name' => 'usos-terminales.create','description'=>'Create use terminal'])->syncRoles([$role1]);
+        Permission::create(['name' => 'usos-terminales.edit','description'=>'Edit use terminal'])->syncRoles([$role1]);
+        Permission::create(['name' => 'usos-terminales.show','description'=>'Show use terminal'])->syncRoles([$role1]);
+        Permission::create(['name' => 'usos-terminales.destroy','description'=>'Delete use terminal'])->syncRoles([$role1]);
+        Permission::create(['name' => 'usos-terminales.pdf','description'=>'Download PDF use terminals'])->syncRoles([$role1]);
+
+        //Terminales
+        Permission::create(['name' => 'terminales.index','description'=>'List from terminals'])->syncRoles([$role1]);
+        Permission::create(['name' => 'terminales.create','description'=>'Create terminal'])->syncRoles([$role1]);
+        Permission::create(['name' => 'terminales.edit','description'=>'Edit terminal'])->syncRoles([$role1]);
+        Permission::create(['name' => 'terminales.show','description'=>'Show terminal'])->syncRoles([$role1]);
+        Permission::create(['name' => 'terminales.destroy','description'=>'Delete terminal'])->syncRoles([$role1]);
+        Permission::create(['name' => 'terminales.pdf','description'=>'Download PDF terminals'])->syncRoles([$role1]);
+
         //ModelosTerminales
         Permission::create(['name' => 'modelos-terminales.index','description'=>'List from model terminals'])->syncRoles([$role1]);
         Permission::create(['name' => 'modelos-terminales.create','description'=>'Create model terminal'])->syncRoles([$role1]);

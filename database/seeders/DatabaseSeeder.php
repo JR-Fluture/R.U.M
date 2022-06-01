@@ -4,13 +4,16 @@ namespace Database\Seeders;
 
 use App\Models\Impresora;
 use App\Models\IncidenciasPc;
+use App\Models\IncidenciasTerminales;
 use App\Models\Linea;
 use App\Models\ModelosTerminales;
 use App\Models\Monitores;
 use App\Models\Pc;
 use App\Models\Persona;
 use App\Models\Sim;
+use App\Models\Terminales;
 use App\Models\UsosPc;
+use App\Models\UsosTerminales;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -52,5 +55,8 @@ class DatabaseSeeder extends Seeder
         Linea::factory(50)->create();
         Sim::factory(50)->create();
         ModelosTerminales::factory(50)->create();
+        Terminales::factory(50)->create();
+        UsosTerminales::factory(50)->create();
+        IncidenciasTerminales::factory(30)->create();
     }
 }

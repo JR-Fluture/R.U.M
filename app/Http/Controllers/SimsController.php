@@ -60,7 +60,7 @@ class SimsController extends Controller
     public function store(Request $request)
     {
         Sim::create($request->all());
-        return redirect()->route('sims.index')->with('info',__('The line was saved successfully'));
+        return redirect()->route('sims.index')->with('info',__('The sim was saved successfully'));
     }
     
     public function show(Sim $sim)
@@ -80,13 +80,13 @@ class SimsController extends Controller
     public function update(Request $request, Sim $sim)
     {
         $sim->update($request->all());
-        return redirect()->route('sims.index')->with('info',__('The line was successfully updated'));
+        return redirect()->route('sims.index')->with('info',__('The sim was successfully updated'));
     }
     
     public function destroy(Sim $sim)
     {
         $sim->delete();
-        return redirect()->route('sims.index')->with('info',__('The line has been successfully deleted'));
+        return redirect()->route('sims.index')->with('info',__('The sim has been successfully deleted'));
     }
 
     public function pdf()

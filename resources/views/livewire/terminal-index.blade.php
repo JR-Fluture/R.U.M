@@ -7,27 +7,26 @@
             </div>
             <div class="col-span-2 grid grid-cols-2 gap-6">
                 <div class="col-span-1 w-full h-full flex flex-col justify-center">
-                    @can('modelos-terminales.create')
-                        <a href="{{route('modelos-terminales.pdf')}}" class="btn btn-danger">{{__('Download')}} PDF <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg></a>
+                    @can('terminales.create')
+                        <a href="{{route('terminales.pdf')}}" class="btn btn-danger">{{__('Download')}} PDF <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg></a>
                     @endcan
                 </div>
                 <div class="col-span-1 w-full h-full flex flex-col justify-center">
-                    @can('modelos-terminales.create')
-                        <a class="btn btn-primary" href="{{route('modelos-terminales.create')}}">{{__('Add Model Terminal')}}</a>
+                    @can('terminales.create')
+                        <a class="btn btn-primary" href="{{route('terminales.create')}}">{{__('Add Terminal')}}</a>
                     @endcan
                 </div>
             </div>
 
         </div>
     </div>
-    @if ($modelos_terminales->count())
+    @if ($terminales->count())
         <div class="card-body">
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>
-                            
-                            <a href="{{route('modelos-terminales.index',['condicional'=>'id','orden'=>isset($_SESSION["orden"]) ? $_SESSION['orden'] : 'ASC'])}}" class="text-black flex">
+                            <a href="{{route('terminales.index',['condicional'=>'id','orden'=>isset($_SESSION["orden"]) ? $_SESSION['orden'] : 'ASC'])}}" class="text-black flex">
                                 ID
                                 <?php
                                     if (isset($_SESSION["condicional"])) {
@@ -54,17 +53,14 @@
                             </a>
                         </th>
                         <th>
-                            {{__('Type Terminal')}}
+                            {{__('Model Terminal')}}
                         </th>
                         <th>
-                            {{__('Mark')}}
-                        </th>
-                        <th>
-                            <a href="{{route('modelos-terminales.index',['condicional'=>'modelo','orden'=>isset($_SESSION["orden"]) ? $_SESSION['orden'] : 'ASC'])}}" class="text-black flex">
-                                {{__('Model')}}
+                            <a href="{{route('terminales.index',['condicional'=>'imei_1','orden'=>isset($_SESSION["orden"]) ? $_SESSION['orden'] : 'ASC'])}}" class="text-black flex">
+                                {{__('1º IMEI')}}
                                 <?php
                                     if (isset($_SESSION["condicional"])) {
-                                        if ($_SESSION['condicional']=='modelo') {
+                                        if ($_SESSION['condicional']=='imei_1') {
                                             if (isset($_SESSION["orden"])) {
                                                 if ($_SESSION['orden']=='ASC') {
                                                     ?>
@@ -87,11 +83,11 @@
                             </a>
                         </th>
                         <th>
-                            <a href="{{route('modelos-terminales.index',['condicional'=>'sistema_operativo','orden'=>isset($_SESSION["orden"]) ? $_SESSION['orden'] : 'ASC'])}}" class="text-black flex">
-                                {{__('S.O.')}}
+                            <a href="{{route('terminales.index',['condicional'=>'imei_2','orden'=>isset($_SESSION["orden"]) ? $_SESSION['orden'] : 'ASC'])}}" class="text-black flex">
+                                {{__('2º IMEI')}}
                                 <?php
                                     if (isset($_SESSION["condicional"])) {
-                                        if ($_SESSION['condicional']=='sistema_operativo') {
+                                        if ($_SESSION['condicional']=='imei_2') {
                                             if (isset($_SESSION["orden"])) {
                                                 if ($_SESSION['orden']=='ASC') {
                                                     ?>
@@ -114,11 +110,11 @@
                             </a>
                         </th>
                         <th>
-                            <a href="{{route('modelos-terminales.index',['condicional'=>'almacenamiento_interno','orden'=>isset($_SESSION["orden"]) ? $_SESSION['orden'] : 'ASC'])}}" class="text-black flex">
-                                {{__('Internal Storage')}}
+                            <a href="{{route('terminales.index',['condicional'=>'numero_serie','orden'=>isset($_SESSION["orden"]) ? $_SESSION['orden'] : 'ASC'])}}" class="text-black flex">
+                                {{__('NºSerie')}}
                                 <?php
                                     if (isset($_SESSION["condicional"])) {
-                                        if ($_SESSION['condicional']=='almacenamiento_interno') {
+                                        if ($_SESSION['condicional']=='numero_serie') {
                                             if (isset($_SESSION["orden"])) {
                                                 if ($_SESSION['orden']=='ASC') {
                                                     ?>
@@ -139,36 +135,31 @@
                                     }
                                 ?>
                             </a>
-                        </th>
-                        <th>
-                                {{__('Type Charger')}}
                         </th>
                         <th colspan="3"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($modelos_terminales as $modelos_terminale)
+                    @foreach ($terminales as $terminale)
                         <tr>
-                            <td>{{$modelos_terminale->id}}</td>
-                            <td>{{$modelos_terminale->tipo_terminal->name}}</td>
-                            <td>{{$modelos_terminale->marca_terminal->name}}</td>
-                            <td>{{$modelos_terminale->modelo}}</td>
-                            <td>{{$modelos_terminale->sistema_operativo}}</td>
-                            <td>{{$modelos_terminale->almacenamiento_interno.'GB'}}</td>
-                            <td>{{$modelos_terminale->tipo_cargador->name}}</td>
+                            <td>{{$terminale->id}}</td>
+                            <td>{{$terminale->modelo_terminal->marca_terminal->name.' '.$terminale->modelo_terminal->modelo.' '.$terminale->modelo_terminal->sistema_operativo}}</td>
+                            <td>{{$terminale->imei_1}}</td>
+                            <td>{{$terminale->imei_2}}</td>
+                            <td>{{$terminale->numero_serie}}</td>
                             <td>
-                                @can('modelos-terminales.show')
-                                    <a class="btn-success btn" href="{{route('modelos-terminales.show',$modelos_terminale)}}">{{__('Show')}}</a>    
+                                @can('terminales.show')
+                                    <a class="btn-success btn" href="{{route('terminales.show',$terminale)}}">{{__('Show')}}</a>    
                                 @endcan
                             </td>
                             <td>
-                                @can('modelos-terminales.edit')
-                                    <a class="btn-primary btn" href="{{route('modelos-terminales.edit',$modelos_terminale)}}">{{__('Edit')}}</a>    
+                                @can('terminales.edit')
+                                    <a class="btn-primary btn" href="{{route('terminales.edit',$terminale)}}">{{__('Edit')}}</a>    
                                 @endcan
                             </td>
                             <td>
-                                @can('modelos-terminales.destroy')
-                                <form action="{{route('modelos-terminales.destroy',compact('modelos_terminale'))}}" method="POST">
+                                @can('terminales.destroy')
+                                <form action="{{route('terminales.destroy',compact('terminale'))}}" method="POST">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn btn-danger btn">{{__('Delete')}}</button>
@@ -181,7 +172,7 @@
             </table>
         </div>
         <div class="card-footer">
-            {{$modelos_terminales->links()}}
+            {{$terminales->links()}}
         </div>
     
 

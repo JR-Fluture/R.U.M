@@ -6,6 +6,7 @@ use App\Http\Controllers\FormatosSimsController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ImpresoraController;
 use App\Http\Controllers\IncidenciaPcController;
+use App\Http\Controllers\IncidenciaTerminalesController;
 use App\Http\Controllers\LineasController;
 use App\Http\Controllers\MarcasTerminalesController;
 use App\Http\Controllers\ModelosTerminalesController;
@@ -14,10 +15,12 @@ use App\Http\Controllers\PcController;
 use App\Http\Controllers\PersonaController;
 use App\Http\Controllers\ProveedoresController;
 use App\Http\Controllers\SimsController;
+use App\Http\Controllers\TerminalesController;
 use App\Http\Controllers\TiposCargadoresController;
 use App\Http\Controllers\TiposLineasController;
 use App\Http\Controllers\TiposTerminalesController;
 use App\Http\Controllers\UsoPcController;
+use App\Http\Controllers\UsoTerminalesController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
@@ -87,6 +90,15 @@ Route::resource('sims',SimsController::class)->middleware('auth');
 
 Route::get('modelos-terminales/pdf',[ModelosTerminalesController::class,'pdf'])->name('modelos-terminales.pdf')->middleware('auth');
 Route::resource('modelos-terminales',ModelosTerminalesController::class)->middleware('auth');
+
+Route::get('terminales/pdf',[TerminalesController::class,'pdf'])->name('terminales.pdf')->middleware('auth');
+Route::resource('terminales',TerminalesController::class)->middleware('auth');
+
+Route::get('usos-terminales/pdf',[UsoTerminalesController::class,'pdf'])->name('usos-terminales.pdf')->middleware('auth');
+Route::resource('usos-terminales',UsoTerminalesController::class)->middleware('auth');
+
+Route::get('incidencias-terminales/pdf',[IncidenciaTerminalesController::class,'pdf'])->name('incidencias-terminales.pdf')->middleware('auth');
+Route::resource('incidencias-terminales',IncidenciaTerminalesController::class)->middleware('auth');
     //* Movil DashBoard
     Route::resource('formatos-sims',FormatosSimsController::class)->except('show')->middleware('auth');
     Route::resource('tipos-lineas',TiposLineasController::class)->except('show')->middleware('auth');

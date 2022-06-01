@@ -16,7 +16,7 @@
             <h3 class="nameLogo">R.U.M.</h3>
         </div>
         <div id="titulo_pdf">
-            <h1>{{__('List SIM')}}</h1>
+            <h1>{{__('List Model Terminal')}}</h1>
         </div>
     </header>
     <main>
@@ -25,24 +25,32 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>{{__('Number SIM')}}</th>
-                        <th>{{__('PIN')}}</th>
-                        <th>{{__('PUK')}}</th>
-                        <th>{{__('Comentaries')}}</th>
-                        <th>{{__('Format SIM')}}</th>
-                        <th>{{__('Line')}}</th>
+                        <th>{{__('Type Terminal')}}</th>
+                        <th>{{__('Mark Terminal')}}</th>
+                        <th>{{__('Model')}}</th>
+                        <th>{{__('S.O.')}}</th>
+                        <th>{{__('It Is Dual SIM')}}</th>
+                        <th>{{__('Internal Storage')}}</th>
+                        <th>{{__('External Storage')}}</th>
+                        <th>{{__('It Is Access Point')}}</th>
+                        <th>{{__('Commentary')}}</th>
+                        <th>{{__('Type Charger')}}</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($sims as $sim)
+                    @foreach ($modelos_terminales as $modelos_terminal)
                         <tr>
-                            <td>{{$sim->id}}</td>
-                            <td>{{$sim->numero_sim}}</td>
-                            <td>{{$sim->pin}}</td>
-                            <td>{{$sim->puk}}</td>
-                            <td>{{$sim->comentarios}}</td>
-                            <td>{{$sim->formato_sim->name}}</td>
-                            <td>{{$sim->linea->numero_movil.' /-/ '.$sim->linea->numero_interno.' /-/ '.$sim->linea->numero_fijo}}</td>
+                            <td>{{$modelos_terminal->id}}</td>
+                            <td>{{$modelos_terminal->tipo_terminal->name}}</td>
+                            <td>{{$modelos_terminal->marca_terminal->name}}</td>
+                            <td>{{$modelos_terminal->modelo}}</td>
+                            <td>{{$modelos_terminal->sistema_operativo}}</td>
+                            <td>{{$modelos_terminal->es_doble_sim==1?'Si':'No'}}</td>
+                            <td>{{$modelos_terminal->almacenamiento_interno.'GB'}}</td>
+                            <td>{{$modelos_terminal->almacenamiento_externo==null?'0GB':$modelos_terminal->almacenamiento_externo.'GB'}}</td>
+                            <td>{{$modelos_terminal->es_punto_acceso==1?'Si':'No'}}</td>
+                            <td>{{$modelos_terminal->comentario}}</td>
+                            <td>{{$modelos_terminal->tipo_cargador->name}}</td>
                         </tr>
                     @endforeach
                 </tbody>

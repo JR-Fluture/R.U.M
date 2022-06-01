@@ -71,7 +71,7 @@ class UsuarioController extends Controller
         ]);
         $usuario->roles()->sync(2);
         
-        return redirect()->route('usuarios.index')->with('info',__('The pc use was saved successfully'));
+        return redirect()->route('usuarios.index')->with('info',__('The user was saved successfully'));
     }
 
     public function show(User $usuario)

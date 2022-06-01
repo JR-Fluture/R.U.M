@@ -19,7 +19,7 @@ class CreateMonitoresTable extends Migration
             $table->string('modelo');
             $table->integer('pulgadas')->nullable();
             $table->string('conectores')->nullable();
-            $table->boolean('tiene_altavoces')->nullable();
+            $table->boolean('tiene_altavoces')->default(0);
             $table->string('numero_serie')->nullable();
             $table->text('comentarios')->nullable();
             $table->timestamps();

@@ -16,8 +16,8 @@ class CreateSimsTable extends Migration
         Schema::create('sims', function (Blueprint $table) {
             $table->id();
             $table->string('numero_sim');
-            $table->integer('pin')->nullable();
-            $table->integer('puk')->nullable();
+            $table->string('pin')->nullable();
+            $table->string('puk')->nullable();
             $table->text('comentarios')->nullable();
             $table->unsignedBigInteger('formato_sim_id');
             $table->unsignedBigInteger('linea_id');

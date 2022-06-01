@@ -60,7 +60,7 @@ class DepartamentosController extends Controller
         $request['cod']=strtoupper($request->cod);
         $departamento=Departamento::create($request->all());
         
-        return redirect()->route('departamentos.index')->with('info',__('The pc use was saved successfully'));
+        return redirect()->route('departamentos.index')->with('info',__('The departament was saved successfully'));
     }
 
     public function show(Departamento $departamento)
@@ -82,13 +82,13 @@ class DepartamentosController extends Controller
         
         $request['cod']=strtoupper($request->cod);
         $departamento->update($request->all());
-        return redirect()->route('departamentos.index')->with('info',__('The user was successfully updated'));
+        return redirect()->route('departamentos.index')->with('info',__('The departament was successfully updated'));
     }
 
     public function destroy(Departamento $departamento)
     {
         $departamento->delete();
-        return redirect()->route('departamentos.index')->with('info',__('The user has been successfully deleted'));
+        return redirect()->route('departamentos.index')->with('info',__('The departament has been successfully deleted'));
     }
 
     public function pdf()

@@ -3,6 +3,10 @@ body{
     height: 100vh;
     background-color: #58ACFA;
 }
+.sticky {
+    position: fixed!important;
+    top: 0;
+}
 
 @-webkit-keyframes rotating /* Safari and Chrome */ {
     from {

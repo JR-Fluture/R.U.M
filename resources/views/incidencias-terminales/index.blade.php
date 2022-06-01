@@ -5,12 +5,12 @@
         </div>        
     @endif
     <div class="py-8">
-        <h1 class=" text-center">{{__('List Model Terminal')}}</h1>
+        <h1 class=" text-center">{{__('Terminal Incidents List')}}</h1>
     </div>
     
     <div class="container-lg bg-white shadow-md overflow-auto p-3">
         <div>
-            @livewire('modelo-terminal-index')
+            @livewire('incidencia-terminal-index')
         </div>
     </div>
     

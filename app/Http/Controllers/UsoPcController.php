@@ -74,9 +74,6 @@ class UsoPcController extends Controller
     
     public function store(Request $request)
     {
-        $request->persona_id=$request->persona_id+1;
-        $request->monitor_id=$request->monitor_id+1;
-        $request->pc_id=$request->pc_id+1;
         $usopc=UsosPc::create($request->all());
         return redirect()->route('usopcs.index')->with('info',__('The pc use was saved successfully'));
     }

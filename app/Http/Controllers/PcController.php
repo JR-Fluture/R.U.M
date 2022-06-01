@@ -108,7 +108,7 @@ class PcController extends Controller
         }
         
         $pdf = Pdf::loadView('pcs.pdf', ['pcs' => $pcs])->setPaper('a4', 'landscape');
-        //return $pdf->download('pcs.pdf');
-        return $pdf->stream(); 
+        return $pdf->download('pcs.pdf');
+        //return $pdf->stream(); 
     }
 }

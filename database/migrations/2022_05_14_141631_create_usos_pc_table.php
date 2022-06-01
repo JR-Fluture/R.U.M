@@ -16,7 +16,7 @@ class CreateUsosPcTable extends Migration
         Schema::create('usos_pcs', function (Blueprint $table) {
             $table->id();
             $table->text('comentarios')->nullable();
-            $table->boolean('en_uso');
+            $table->boolean('en_uso')->default(0);
             $table->date('fin_uso')->nullable();
             $table->unsignedBigInteger('persona_id');
             $table->unsignedBigInteger('pc_id');

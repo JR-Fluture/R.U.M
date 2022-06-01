@@ -18,7 +18,6 @@ class CreateTerminalesTable extends Migration
             $table->string('imei_1')->nullable();
             $table->string('imei_2')->nullable();
             $table->string('numero_serie')->nullable();
-            $table->boolean('en_uso')->nullable();
             $table->text('comentarios')->nullable();
             $table->unsignedBigInteger('modelo_terminal_id');
             $table->foreign('modelo_terminal_id')->references('id')->on('modelos_terminales')->onUpdate('cascade')->onDelete('cascade');

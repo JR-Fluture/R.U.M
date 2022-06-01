@@ -18,7 +18,7 @@ class CreateModelosTerminalesTable extends Migration
             $table->string('modelo');
             $table->string('sistema_operativo')->nullable();
             $table->string('version_sistema_operativo')->nullable();
-            $table->boolean('es_doble_sim')->nullable();
+            $table->boolean('es_doble_sim')->default(0);
             $table->integer('ram')->nullable();
             $table->integer('almacenamiento_interno')->nullable();
             $table->string('tiene_almacenamiento_externo')->nullable();
@@ -26,8 +26,8 @@ class CreateModelosTerminalesTable extends Migration
             $table->integer('px_camara_trasera')->nullable();
             $table->integer('px_camara_frontal')->nullable();
             $table->integer('num_puertos_rj_45')->nullable();
-            $table->string('tiene_wifi')->nullable();
-            $table->boolean('es_punto_acceso')->nullable();
+            $table->boolean('tiene_wifi')->default(0);
+            $table->boolean('es_punto_acceso')->default(0);
             $table->text('comentario')->nullable();
             $table->unsignedBigInteger('tipo_terminal_id');
             $table->unsignedBigInteger('marca_terminal_id');
